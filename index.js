@@ -1,5 +1,16 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  //create an object to keep track of any numbers
+  const numbers = {};
+  //loop through each number in the array
+  for (let i = 0; i < array.length; i++) {
+    let rem = target - array[i];
+    //check if any key is the rem
+    if (rem in numbers) return true;
+    //add that number to the object incase of any other instance
+    numbers[array[i]] = true;
+  }
+  return false;
 }
 
 /* 
